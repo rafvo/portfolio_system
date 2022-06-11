@@ -1,7 +1,7 @@
 <template>
   <div class="ranked-competences-list">
     <v-row>
-      <v-col class="mb-0 pb-0" cols="12">
+      <v-col class="py-0 my-0" cols="12">
         <slot name="title">
           <SectionTitle :title="title" />
         </slot>
@@ -10,7 +10,7 @@
 
     <v-row>
       <v-col
-        class="mt-0 py-0 my-0"
+        class="py-0"
         cols="4"
         v-for="(item, key) in list"
         :key="key"
@@ -35,6 +35,22 @@ export default {
     list: {
       type: Array,
       default: () => [
+        new Competence({
+          id: 9,
+          user_id: 1,
+          title: "POO",
+          ranked_value: 5,
+          ranked_per: 100,
+          description: "",
+        }),
+        new Competence({
+          id: 9,
+          user_id: 1,
+          title: "Arquitetura MVC",
+          ranked_value: 5,
+          ranked_per: 100,
+          description: "",
+        }),
         new Competence({
           id: 19,
           user_id: 1,
@@ -67,6 +83,7 @@ export default {
           ranked_per: 90,
           description: "",
         }),
+        
         new Competence({
           id: 8,
           user_id: 1,
@@ -123,10 +140,26 @@ export default {
           ranked_per: 80,
           description: "",
         }),
+        // new Competence({
+        //   id: 9,
+        //   user_id: 1,
+        //   title: "Clean Code",
+        //   ranked_value: 4,
+        //   ranked_per: 80,
+        //   description: "",
+        // }),
+        new Competence({
+          id: 9,
+          user_id: 1,
+          title: "Injeção de Dependência",
+          ranked_value: 4,
+          ranked_per: 80,
+          description: "",
+        }),
         new Competence({
           id: 25,
           user_id: 1,
-          title: "Scrum",
+          title: "Metodologia Ágil Scrum",
           ranked_value: 4,
           ranked_per: 80,
           description: "",
@@ -179,14 +212,14 @@ export default {
           ranked_per: 70,
           description: "",
         }),
-        new Competence({
-          id: 18,
-          user_id: 1,
-          title: "Composer",
-          ranked_value: 3.5,
-          ranked_per: 70,
-          description: "",
-        }),
+        // new Competence({
+        //   id: 18,
+        //   user_id: 1,
+        //   title: "Composer",
+        //   ranked_value: 3.5,
+        //   ranked_per: 70,
+        //   description: "",
+        // }),
         new Competence({
           id: 16,
           user_id: 1,
@@ -227,12 +260,28 @@ export default {
           ranked_per: 60,
           description: "",
         }),
+        //  new Competence({
+        //   id: 26,
+        //   user_id: 1,
+        //   title: "Windows",
+        //   ranked_value: 5,
+        //   ranked_per: 100,
+        //   description: "",
+        // }),
         new Competence({
           id: 26,
           user_id: 1,
           title: "Linux",
           ranked_value: 3,
           ranked_per: 60,
+          description: "",
+        }),
+         new Competence({
+          id: 11,
+          user_id: 1,
+          title: "TypeScript",
+          ranked_value: 2.5,
+          ranked_per: 50,
           description: "",
         }),
         new Competence({
@@ -243,6 +292,30 @@ export default {
           ranked_per: 50,
           description: "",
         }),
+        new Competence({
+          id: 30,
+          user_id: 1,
+          title: "Entity Framework Core",
+          ranked_value: 2,
+          ranked_per: 40,
+          description: "",
+        }),
+        // new Competence({
+        //   id: 31,
+        //   user_id: 1,
+        //   title: "Windows Forms",
+        //   ranked_value: 2,
+        //   ranked_per: 40,
+        //   description: "",
+        // }),
+        // new Competence({
+        //   id: 31,
+        //   user_id: 1,
+        //   title: "Pacote Office",
+        //   ranked_value: 4.5,
+        //   ranked_per: 90,
+        //   description: "",
+        // }),
       ],
       required: false,
     },

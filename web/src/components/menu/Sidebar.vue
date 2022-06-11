@@ -1,6 +1,8 @@
 <template>
   <nav class="sidebar">
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
+      absolute
+      left
       :permanent="permanent"
       :dark="dark"
       :fixed="fixed"
@@ -8,6 +10,10 @@
       :floating="floating"
       :width="width"
     >
+      <slot></slot>
+    </v-navigation-drawer> -->
+
+    <v-navigation-drawer dark app :permanent="$vuetify.breakpoint.mdAndUp">
       <slot></slot>
     </v-navigation-drawer>
   </nav>
@@ -43,9 +49,9 @@ export default {
     },
     width: {
       type: String,
-      default: '21%',
+      default: "21%",
       required: false,
-    }
+    },
   },
 };
 </script>

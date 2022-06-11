@@ -1,5 +1,5 @@
 <template>
-  <h3 class="font-weight-light">{{ title }}</h3>
+  <h3 class="font-weight-bold">{{ title }}</h3>
 </template>
 
 <script>

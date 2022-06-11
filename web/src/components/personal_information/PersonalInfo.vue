@@ -1,19 +1,17 @@
 <template>
   <div>
     <v-list>
-      <v-list-item>
+      <v-list-item
+        :style="{
+          'flex-flow': 'column',
+        }"
+      >
         <v-list-item-content>
-          <v-list-item-title>
-            <span class="text"> {{ user.name }} </span>
-          </v-list-item-title>
           <v-list-item-subtitle class="mt-2">
-            <OccupationInfo :occupation="user.occupation" />
-          </v-list-item-subtitle>
-          <v-list-item-subtitle class="mt-2">
-            <EmailInfo :email="user.email" />
+            <EmailInfo :email="user.email" classes="sidebar-title" />
           </v-list-item-subtitle>
           <v-list-item-subtitle>
-            <PhonesList row-classes="p-0 mt-0"/>
+            <PhonesList row-classes="p-0 mt-0" phone-classes="sidebar-title" />
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -54,3 +52,10 @@ export default {
 
 <style>
 </style>
+
+          <!-- <v-list-item-title>
+            <span class="text"> {{ user.name }} </span>
+          </v-list-item-title>
+          <v-list-item-subtitle class="mt-2">
+            <OccupationInfo :occupation="user.occupation" />
+          </v-list-item-subtitle> -->

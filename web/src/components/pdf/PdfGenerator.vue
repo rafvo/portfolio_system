@@ -1,6 +1,6 @@
 <template>
   <div class="pdf-generator">
-    <div class="fixed-top">
+    <div class="fixed-top no-print">
       <v-btn
         class="pdf-generate"
         depressed
@@ -11,11 +11,7 @@
       </v-btn>
     </div>
 
-    <v-row ref="pdfContent">
-      <v-col>
-        <slot name="pdf-content"></slot>
-      </v-col>
-    </v-row>
+    <slot ref="pdfContent" name="pdf-content"></slot>
   </div>
 </template>
 
@@ -36,19 +32,24 @@ export default {
       return pdfContent;
     },
     pdfHTML() {
-      const html = document.documentElement.innerHTML; //document.getElementsByTagName("html")[0].innerHTML; //
-      // console.log(html);
+      const html = document.documentElement.innerHTML;
       return html;
     },
-    async pdfGenerate() {
-      var doc = new jsPDF();
-      const page = this.pdfHTML();
+    pdfGenerate() {
+      //var doc = new jsPDF();
+      const html = this.pdfHTML();
+
+      let win = window.open("", "", "height=1100,width=1200");
+      win.document.write(`${html}`);
+      win.document.close();
+      win.print();
+
       // console.log(`<html>${page}</html>`);
 
-      await doc.html(page);
+      //await doc.html(page);
 
       // doc.html();
-      doc.save(`${this.pdfName}.pdf`);
+      //doc.save(`${this.pdfName}.pdf`);
     },
   },
 };

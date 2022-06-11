@@ -9,7 +9,7 @@
     </v-row>
 
     <v-row v-for="(item, key) in list" :key="key">
-      <v-col class="pb-0" cols="12">
+      <v-col class="py-0" cols="12">
         <ComplementaryCoursesItem :complementary-courses="item" />
       </v-col>
     </v-row>
@@ -31,6 +31,30 @@ export default {
       type: Array,
       default: () => [
         new ComplementaryCourses({
+          id: 7,
+          user_id: 1,
+          school: "Udemy",
+          course_name:
+            ".NET Web API e Angular + EF Core - 2022",
+          initial_year_month: "mai 2022",
+          final_year_month: null,
+          is_completed: false,
+          link: "https://www.udemy.com/course/angular-dotnetcore-efcore/",
+          description: "",
+        }),
+        new ComplementaryCourses({
+          id: 6,
+          user_id: 1,
+          school: "Udemy",
+          course_name:
+            "JavaScript do básico ao avançado (c/ Node.js e projetos)",
+          initial_year_month: "mai 2022",
+          final_year_month: null,
+          is_completed: false,
+          link: "https://www.udemy.com/course/javascript-do-basico-ao-avancado-com-node-e-projetos/",
+          description: "",
+        }),
+        new ComplementaryCourses({
           id: 1,
           user_id: 1,
           school: "Udemy",
@@ -38,6 +62,7 @@ export default {
           initial_year_month: null,
           final_year_month: "dez 2021",
           is_completed: true,
+          link: "https://www.udemy.com/course/vue-js-completo/",
           description: "",
         }),
         new ComplementaryCourses({
@@ -48,6 +73,7 @@ export default {
           initial_year_month: null,
           final_year_month: "mai 2021",
           is_completed: true,
+          link: "https://www.udemy.com/course/introducao-ao-laravel-53/",
           description: "",
         }),
         new ComplementaryCourses({
@@ -58,6 +84,7 @@ export default {
           initial_year_month: null,
           final_year_month: "nov 2020",
           is_completed: true,
+          link: "https://www.udemy.com/course/lojaflutter/",
           description: "",
         }),
         new ComplementaryCourses({
@@ -68,6 +95,7 @@ export default {
           initial_year_month: null,
           final_year_month: "dez 2017",
           is_completed: true,
+          link: "",
           description: "",
         }),
         new ComplementaryCourses({
@@ -78,6 +106,7 @@ export default {
           initial_year_month: null,
           final_year_month: "jun 2017",
           is_completed: true,
+          link: "",
           description: "",
         }),
       ],

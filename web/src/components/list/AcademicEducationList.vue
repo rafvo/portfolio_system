@@ -9,7 +9,7 @@
     </v-row>
 
     <v-row v-for="(item, key) in list" :key="key">
-      <v-col class="pb-0" cols="12">
+      <v-col class="py-0" cols="12">
         <AcademicEducationItem :academic-education="item" />
       </v-col>
     </v-row>

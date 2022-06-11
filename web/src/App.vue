@@ -1,7 +1,7 @@
 <template>
   <main class="wrapper" :class="theme">
     <v-app>
-      <v-main class="mx-5 my-5">
+      <v-main class="mx-2">
         <router-view :key="$route.path" />
       </v-main>
     </v-app>

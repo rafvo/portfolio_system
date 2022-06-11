@@ -1,22 +1,18 @@
 <template>
   <div class="professional-experience-item">
-    <v-row>
-      <v-col>
-        <p>
-          <span class="comma-after">{{ professionalExperience.employer }}</span>
-          <span class="font-weight-light">{{ professionalExperience.location }}</span>
-        </p>
-        <p>
-          <span class="comma-after">{{
-            professionalExperience.occupation
-          }}</span>
-          <span class="font-weight-light">{{ fullExperiencePeriod }}</span>
-        </p>
-        <p class="font-weight-light">
-          {{ professionalExperience.description }}
-        </p>
-      </v-col>
-    </v-row>
+    <p>
+      <span class="comma-after">{{ professionalExperience.employer }}</span>
+      <span class="font-weight-light">{{
+        professionalExperience.location
+      }}</span>
+    </p>
+    <p>
+      <span class="comma-after">{{ professionalExperience.occupation }}</span>
+      <span class="font-weight-light">{{ fullExperiencePeriod }}</span>
+    </p>
+    <p class="font-weight-light">
+      {{ professionalExperience.description }}
+    </p>
   </div>
 </template>
 
@@ -42,6 +38,11 @@ export default {
 </script>
 
 <style scoped>
+p {
+  margin: 0!important;
+  padding: 0!important;
+}
+
 .professional-experience-item p {
   padding: 0 !important;
   margin: 0 !important;

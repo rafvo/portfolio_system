@@ -4,15 +4,17 @@
       <v-col>
         <p>
           <span class="text-capitalize">{{ fullCoursePeriod }}</span>
-          <small
-            class="ml-2 font-weight-light"
-            v-if="complementaryCourses.is_completed"
-            >(CONCLUÍDO)</small
-          >
+          <small class="ml-2 font-weight-light">
+            <span v-if="complementaryCourses.is_completed">(CONCLUÍDO)</span>
+            <span v-else>(CURSANDO)</span>
+          </small>
 
-          <span class="feature-before comma-after font-weight-light">{{
-            complementaryCourses.course_name
-          }}</span>
+          <span class="feature-before comma-after font-weight-light">
+            <a v-if="linkEnable" :href="complementaryCourses.link" target="_blank">
+              {{ complementaryCourses.course_name }}
+            </a>
+            <span v-else> {{ complementaryCourses.course_name }}</span>
+          </span>
 
           <span class="mr-1 font-weight-light">{{
             complementaryCourses.school
@@ -35,10 +37,46 @@ export default {
     },
   },
   computed: {
-    fullCoursePeriod() {
-      return this.complementaryCourses.is_completed
+    existComplementaryCourses() {
+      return this.complementaryCourses;
+    },
+    isCompleted() {
+      return (
+        this.existComplementaryCourses && this.complementaryCourses.is_completed
+      );
+    },
+    initialYearMonth() {
+      return this.existComplementaryCourses &&
+        this.complementaryCourses.initial_year_month
+        ? `${this.complementaryCourses.initial_year_month}`
+        : "";
+    },
+    finalYearMonth() {
+      return this.existComplementaryCourses &&
+        this.complementaryCourses.final_year_month
         ? `${this.complementaryCourses.final_year_month}`
-        : `${this.complementaryCourses.initial_year_month} - ${this.academicEducation.final_year_month}`;
+        : "";
+    },
+    fullCoursePeriodList() {
+      return [this.initialYearMonth, this.finalYearMonth];
+    },
+    cleanFullCoursePeriodList() {
+      const results = this.fullCoursePeriodList.filter((element) => {
+        return element !== "";
+      });
+
+      return results;
+    },
+    concatFullCoursePeriodList() {
+      return this.cleanFullCoursePeriodList.join(" - ");
+    },
+    fullCoursePeriod() {
+      return this.isCompleted
+        ? this.finalYearMonth
+        : this.concatFullCoursePeriodList;
+    },
+    linkEnable() {
+      return this.existComplementaryCourses && this.complementaryCourses.link;
     },
   },
 };

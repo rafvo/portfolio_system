@@ -8,8 +8,8 @@
       </v-col>
     </v-row>
 
-    <v-row v-for="(item, key) in list" :key="key">
-      <v-col class="mt-0" cols="12">
+    <v-row class="mb-1" v-for="(item, key) in list" :key="key">
+      <v-col class="py-0" cols="12">
         <ProfessionalExperienceItem :professional-experience="item" />
       </v-col>
     </v-row>
@@ -34,7 +34,7 @@ export default {
           id: 1,
           user_id: 1,
           occupation: "Desenvolvedor Full-Stack",
-          employer: "Rebuut Criação e Comunicação Digital",
+          employer: "Rebuut LTDA",
           initial_year_month: "jan 2021",
           final_year_month: "mai 2022",
           current_job: false,
@@ -54,18 +54,18 @@ export default {
           description:
             "Desenvolver aplicações web com a linguagem de programação PHP, banco de dados PL/SQL da Oracle, Bootstrap e Jquery como tecnologias de desenvolvimento web, além do atendimento telefônico ao usuário e de solicitações à T.I.",
         }),
-        new ProfessionalExperience({
-          id: 3,
-          user_id: 1,
-          occupation: "Desenhista Projetista",
-          employer: "Astec Engenharia LTDA",
-          initial_year_month: "abr 2014",
-          final_year_month: "mar 2016",
-          current_job: false,
-          location: "São José do Rio Preto - SP",
-          description:
-            "Manutenção, elaboração e interpretação de desenhos técnicos em CAD, conforme as normas técnicas, nos projetos da área de engenharia de transportes no setor de sinalização de rodovias.",
-        }),
+        // new ProfessionalExperience({
+        //   id: 3,
+        //   user_id: 1,
+        //   occupation: "Desenhista Projetista",
+        //   employer: "Astec Engenharia LTDA",
+        //   initial_year_month: "abr 2014",
+        //   final_year_month: "mar 2016",
+        //   current_job: false,
+        //   location: "São José do Rio Preto - SP",
+        //   description:
+        //     "Manutenção, elaboração e interpretação de desenhos técnicos em CAD, conforme as normas técnicas, nos projetos da área de engenharia de transportes no setor de sinalização de rodovias.",
+        // }),
       ],
       required: false,
     },

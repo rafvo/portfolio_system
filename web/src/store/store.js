@@ -1,20 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import users from './modules/users.js'
+import Vue from "vue";
+import Vuex from "vuex";
 // import createPersistedState from 'vuex-persistedstate';
 // import SecureLS from "secure-ls";
 
 // var ls = new SecureLS({ encodingType: 'rc4', isCompression: false, encryptionSecret: 's3cr3tPa$$w0rd@123' });
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
-  modules: {
-    users,
-  },
+  modules: {},
 
   // plugins: [
   //   createPersistedState({
@@ -32,4 +29,4 @@ export default new Vuex.Store({
   //     },
   //   })
   // ],
-})
+});

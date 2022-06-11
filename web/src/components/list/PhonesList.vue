@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-row :class="rowClasses" v-for="(item, key) in list" :key="key">
+    <v-row class="py-0" :class="rowClasses" v-for="(item, key) in list" :key="key">
       <v-col :class="colClasses">
-        <PhoneItem :phone="item" />
+        <PhoneItem :phone="item" :classes="phoneClasses"/>
       </v-col>
     </v-row>
   </div>
@@ -50,6 +50,10 @@ export default {
       type: String,
       default: "",
       required: false,
+    },
+    phoneClasses: {
+      type: String,
+      default: "",
     },
   },
 };
